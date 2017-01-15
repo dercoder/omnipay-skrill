@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml
+X-Skrill-mqi-Version: 1.37.1
+X-Fong-Id: 3976a2b8-9933-47d2-85a8-6facae446261
+Date: Sun, 15 Jan 2017 12:00:07 GMT
+Connection: keep-alive
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><response><transaction><amount>0.01</amount><currency>EUR</currency><id>1994284674</id><status>2</status><status_msg>processed</status_msg></transaction></response>

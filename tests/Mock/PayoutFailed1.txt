@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml
+X-Skrill-mqi-Version: 1.37.1
+X-Fong-Id: a4e4e97a-fc37-42fb-b9ff-724dc08ca2bf
+Date: Sun, 15 Jan 2017 12:01:13 GMT
+Connection: keep-alive
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><response><error><error_msg>SESSION_EXPIRED</error_msg></error></response>

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+X-Skrill-mqi-Version: 1.37.1
+X-Fong-Id: 46f47a5b-0686-4cf9-a571-3a8bfaac0258
+Date: Fri, 13 Jan 2017 01:11:39 GMT
+Connection: keep-alive
+
+200     OK
+merchant_id=89540667&transaction_id=58758699d778f&mb_transaction_id=1990625423&mb_amount=0.01&mb_currency=EUR&status=2&md5sig=988DE207A592FDBACE434BF076482A44&amount=0.01&pay_from_email=bosegu28%40gmail.com&pay_to_email=support%40golden90.com&currency=EUR

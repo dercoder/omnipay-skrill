@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml
+X-Skrill-mqi-Version: 1.37.1
+X-Fong-Id: f0ba0fb1-c9b3-4786-8cb1-fb40fbb52745
+Date: Sun, 15 Jan 2017 11:46:42 GMT
+Connection: keep-alive
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><response><sid>e1a8322ea4ce6991461a16068594aac0</sid></response>

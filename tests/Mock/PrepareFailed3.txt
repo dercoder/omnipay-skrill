@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml;charset=ISO-8859-1
+Date: Sun, 15 Jan 2017 11:44:50 GMT
+Connection: keep-alive
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><response><error><error_msg>LOGIN_INVALID</error_msg></error></response>
