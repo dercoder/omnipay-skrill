@@ -5,6 +5,11 @@ namespace Omnipay\Skrill\Message;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
 
+/**
+ * Class FetchTransactionResponse
+ * Skrill Automated Payments Interface v2.5
+ * @package Omnipay\Skrill\Message
+ */
 class FetchTransactionResponse extends AbstractResponse
 {
     /**

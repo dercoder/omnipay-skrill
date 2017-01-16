@@ -6,10 +6,20 @@ use Omnipay\Tests\TestCase;
 
 class PurchaseResponseTest extends TestCase
 {
+    /**
+     * @var PurchaseRequest
+     */
+    protected $request;
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->request = new PurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
+    }
+
     public function testRedirect()
     {
-        $request = new PurchaseRequest($this->getHttpClient(), $this->getHttpRequest());
-        $response = new PurchaseResponse($request, array());
+        $response = new PurchaseResponse($this->request, array('sid' => '5c779936dd026263fc9614413d5a5982'));
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -19,8 +29,8 @@ class PurchaseResponseTest extends TestCase
         $this->assertNull($response->getMessage());
         $this->assertNull($response->getTransactionId());
         $this->assertNull($response->getTransactionReference());
-        $this->assertSame('https://pay.skrill.com', $response->getRedirectUrl());
-        $this->assertSame('POST', $response->getRedirectMethod());
-        $this->assertSame(array(), $response->getRedirectData());
+        $this->assertSame('https://pay.skrill.com?sid=5c779936dd026263fc9614413d5a5982', $response->getRedirectUrl());
+        $this->assertSame('GET', $response->getRedirectMethod());
+        $this->assertNull($response->getRedirectData());
     }
 }

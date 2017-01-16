@@ -3,11 +3,11 @@
 namespace Omnipay\Skrill\Message;
 
 /**
- * Class PrepareRequest
+ * Class PreparePayoutRequest
  * Skrill Automated Payments Interface v2.5
  * @package Omnipay\Skrill\Message
  */
-class PrepareRequest extends AbstractRequest
+class PreparePayoutRequest extends AbstractRequest
 {
     /**
      * @var string
@@ -63,12 +63,12 @@ class PrepareRequest extends AbstractRequest
     /**
      * @param array $data
      *
-     * @return PrepareResponse
+     * @return PreparePayoutResponse
      */
     public function sendData($data)
     {
         $uri = $this->endpoint . '?' . http_build_query($data);
         $httpResponse = $this->httpClient->get($uri)->send();
-        return new PrepareResponse($this, $httpResponse->xml());
+        return new PreparePayoutResponse($this, $httpResponse->xml());
     }
 }

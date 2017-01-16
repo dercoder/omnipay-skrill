@@ -2,7 +2,12 @@
 
 namespace Omnipay\Skrill\Message;
 
-class PayoutResponse extends PrepareResponse
+/**
+ * Class PayoutResponse
+ * Skrill Automated Payments Interface v2.5
+ * @package Omnipay\Skrill\Message
+ */
+class PayoutResponse extends PreparePayoutResponse
 {
     /**
      * @return bool

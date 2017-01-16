@@ -30,14 +30,14 @@ class PayoutRequestTest extends TestCase
 
     public function testGetData()
     {
-        $this->setMockHttpResponse('PrepareSuccess.txt');
+        $this->setMockHttpResponse('PreparePayoutSuccess.txt');
         $data = $this->request->getData();
         $this->assertSame('merchant@example.com', $data['email']);
         $this->assertSame('3bff8c620d431152149187ab60af97cf', $data['password']);
         $this->assertSame('transfer', $data['action']);
         $this->assertSame('e1a8322ea4ce6991461a16068594aac0', $data['sid']);
 
-        $this->setMockHttpResponse('PrepareFailed1.txt');
+        $this->setMockHttpResponse('PreparePayoutFailed1.txt');
         $this->setExpectedException('Omnipay\Common\Exception\InvalidRequestException', 'Invalid combination of email and password is supplied.');
         $this->request->getData();
     }
@@ -45,7 +45,7 @@ class PayoutRequestTest extends TestCase
     public function testSendData()
     {
         $this->setMockHttpResponse(array(
-            'PrepareSuccess.txt',
+            'PreparePayoutSuccess.txt',
             'PayoutSuccess.txt'
         ));
         $data = $this->request->getData();

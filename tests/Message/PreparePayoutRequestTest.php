@@ -4,10 +4,10 @@ namespace Omnipay\Skrill\Message;
 
 use Omnipay\Tests\TestCase;
 
-class PrepareRequestTest extends TestCase
+class PreparePayoutRequestTest extends TestCase
 {
     /**
-     * @var PrepareRequest
+     * @var PreparePayoutRequest
      */
     private $request;
 
@@ -15,7 +15,7 @@ class PrepareRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->request = new PrepareRequest($this->getHttpClient(), $this->getHttpRequest());
+        $this->request = new PreparePayoutRequest($this->getHttpClient(), $this->getHttpRequest());
         $this->request->initialize(array(
             'email'         => 'merchant@example.com',
             'password'      => 'oJ2rHLBVSbD5iGfT',
@@ -43,9 +43,9 @@ class PrepareRequestTest extends TestCase
 
     public function testSendData()
     {
-        $this->setMockHttpResponse('PrepareSuccess.txt');
+        $this->setMockHttpResponse('PreparePayoutSuccess.txt');
         $data = $this->request->getData();
         $response = $this->request->sendData($data);
-        $this->assertInstanceOf('Omnipay\Skrill\Message\PrepareResponse', $response);
+        $this->assertInstanceOf('Omnipay\Skrill\Message\PreparePayoutResponse', $response);
     }
 }

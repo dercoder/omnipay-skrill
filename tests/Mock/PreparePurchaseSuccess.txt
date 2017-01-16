@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Content-Type: text/html;charset=utf-8
+Content-Length: 32
+Expires: Tue, 01 Jan 1980 00:00:00 GMT
+X-Skrill-gateway-core-Version: 1.37.1
+Cache-Control: no-cache
+X-Fong-Id: 07fae659-1ce4-4832-8bec-dab4d903f5cb
+Pragma: no-cache
+Date: Mon, 16 Jan 2017 18:07:55 GMT
+Connection: keep-alive
+
+5c779936dd026263fc9614413d5a5982

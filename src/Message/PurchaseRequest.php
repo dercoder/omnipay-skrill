@@ -25,15 +25,21 @@ class PurchaseRequest extends AbstractRequest
             'notifyUrl'
         );
 
+        $prepareRequest = new PreparePurchaseRequest($this->httpClient, $this->httpRequest);
+        /** @var PreparePurchaseResponse $prepareResponse */
+        $prepareResponse = $prepareRequest->initialize(array(
+            'email'         => $this->getEmail(),
+            'amount'        => $this->getAmount(),
+            'currency'      => $this->getCurrency(),
+            'transactionId' => $this->getTransactionId(),
+            'description'   => $this->getDescription(),
+            'returnUrl'     => $this->getReturnUrl(),
+            'cancelUrl'     => $this->getCancelUrl(),
+            'notifyUrl'     => $this->getNotifyUrl()
+        ))->send();
+
         return array(
-            'pay_to_email'          => $this->getEmail(),
-            'recipient_description' => $this->getDescription(),
-            'transaction_id'        => $this->getTransactionId(),
-            'return_url'            => $this->getReturnUrl(),
-            'cancel_url'            => $this->getCancelUrl(),
-            'status_url'            => $this->getNotifyUrl(),
-            'amount'                => $this->getAmount(),
-            'currency'              => $this->getCurrency()
+            'sid' => $prepareResponse->getSessionId()
         );
     }
 

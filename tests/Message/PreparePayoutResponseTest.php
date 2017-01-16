@@ -4,23 +4,23 @@ namespace Omnipay\Skrill\Message;
 
 use Omnipay\Tests\TestCase;
 
-class PrepareResponseTest extends TestCase
+class PreparePayoutResponseTest extends TestCase
 {
     /**
-     * @var PrepareRequest
+     * @var PreparePayoutRequest
      */
     protected $request;
 
     public function setUp()
     {
         parent::setUp();
-        $this->request = new PrepareRequest($this->getHttpClient(), $this->getHttpRequest());
+        $this->request = new PreparePayoutRequest($this->getHttpClient(), $this->getHttpRequest());
     }
 
     public function testSuccess()
     {
-        $httpResponse = $this->getMockHttpResponse('PrepareSuccess.txt');
-        $response = new PrepareResponse($this->request, $httpResponse->xml());
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutSuccess.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
 
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -35,8 +35,8 @@ class PrepareResponseTest extends TestCase
 
     public function testFailed1()
     {
-        $httpResponse = $this->getMockHttpResponse('PrepareFailed1.txt');
-        $response = new PrepareResponse($this->request, $httpResponse->xml());
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutFailed1.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -51,8 +51,8 @@ class PrepareResponseTest extends TestCase
 
     public function testFailed2()
     {
-        $httpResponse = $this->getMockHttpResponse('PrepareFailed2.txt');
-        $response = new PrepareResponse($this->request, $httpResponse->xml());
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutFailed2.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -67,8 +67,8 @@ class PrepareResponseTest extends TestCase
 
     public function testFailed3()
     {
-        $httpResponse = $this->getMockHttpResponse('PrepareFailed3.txt');
-        $response = new PrepareResponse($this->request, $httpResponse->xml());
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutFailed3.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -83,8 +83,8 @@ class PrepareResponseTest extends TestCase
 
     public function testFailed4()
     {
-        $httpResponse = $this->getMockHttpResponse('PrepareFailed4.txt');
-        $response = new PrepareResponse($this->request, $httpResponse->xml());
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutFailed4.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -99,8 +99,8 @@ class PrepareResponseTest extends TestCase
 
     public function testFailed5()
     {
-        $httpResponse = $this->getMockHttpResponse('PrepareFailed5.txt');
-        $response = new PrepareResponse($this->request, $httpResponse->xml());
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutFailed5.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -115,8 +115,8 @@ class PrepareResponseTest extends TestCase
 
     public function testFailed6()
     {
-        $httpResponse = $this->getMockHttpResponse('PrepareFailed6.txt');
-        $response = new PrepareResponse($this->request, $httpResponse->xml());
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutFailed6.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -131,8 +131,8 @@ class PrepareResponseTest extends TestCase
 
     public function testFailed7()
     {
-        $httpResponse = $this->getMockHttpResponse('PrepareFailed7.txt');
-        $response = new PrepareResponse($this->request, $httpResponse->xml());
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutFailed7.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());

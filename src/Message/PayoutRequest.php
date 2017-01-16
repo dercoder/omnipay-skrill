@@ -9,7 +9,7 @@ use Omnipay\Common\Exception\InvalidRequestException;
  * Skrill Automated Payments Interface v2.5
  * @package Omnipay\Skrill\Message
  */
-class PayoutRequest extends PrepareRequest
+class PayoutRequest extends PreparePayoutRequest
 {
     /**
      * @return array
@@ -27,8 +27,8 @@ class PayoutRequest extends PrepareRequest
             'receiver'
         );
 
-        $prepareRequest = new PrepareRequest($this->httpClient, $this->httpRequest);
-        /** @var PrepareResponse $prepareResponse */
+        $prepareRequest = new PreparePayoutRequest($this->httpClient, $this->httpRequest);
+        /** @var PreparePayoutResponse $prepareResponse */
         $prepareResponse = $prepareRequest->initialize(array(
             'email'         => $this->getEmail(),
             'password'      => $this->getPassword(),

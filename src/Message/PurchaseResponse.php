@@ -7,6 +7,7 @@ use Omnipay\Common\Message\RedirectResponseInterface;
 
 /**
  * Class PurchaseResponse
+ * Skrill Wallet Integration v7.7
  * @package Omnipay\Skrill\Message
  */
 class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
@@ -24,7 +25,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
      */
     public function isRedirect()
     {
-        return true;
+        return (bool) $this->getSessionId();
     }
 
     /**
@@ -32,7 +33,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
      */
     public function getRedirectUrl()
     {
-        return 'https://pay.skrill.com';
+        return 'https://pay.skrill.com?' . http_build_query($this->data);
     }
 
     /**
@@ -40,7 +41,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
      */
     public function getRedirectMethod()
     {
-        return 'POST';
+        return 'GET';
     }
 
     /**
@@ -48,6 +49,14 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
      */
     public function getRedirectData()
     {
-        return $this->data;
+        return null;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSessionId()
+    {
+        return isset($this->data['sid']) ? $this->data['sid'] : null;
     }
 }

@@ -6,6 +6,7 @@ use Omnipay\Common\Message\AbstractResponse;
 
 /**
  * Class CompletePurchaseResponse
+ * Skrill Wallet Integration v7.7
  * @package Omnipay\Skrill\Message
  */
 class CompletePurchaseResponse extends AbstractResponse
