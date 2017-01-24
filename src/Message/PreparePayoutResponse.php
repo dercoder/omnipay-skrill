@@ -66,7 +66,7 @@ class PreparePayoutResponse extends AbstractResponse
             case 'PAYMENT_DENIED':
                 return 'Check in your account profile that the API is enabled.';
             default:
-                return 'Unknown error.';
+                return 'Error Code: ' . $code;
         }
     }
 }

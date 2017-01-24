@@ -123,7 +123,7 @@ class PreparePayoutResponseTest extends TestCase
         $this->assertFalse($response->isPending());
         $this->assertFalse($response->isRedirect());
         $this->assertSame('SOMETHING_ELSE', $response->getCode());
-        $this->assertSame('Unknown error.', $response->getMessage());
+        $this->assertSame('Error Code: SOMETHING_ELSE', $response->getMessage());
         $this->assertNull($response->getSessionId());
         $this->assertNull($response->getTransactionId());
         $this->assertNull($response->getTransactionReference());
