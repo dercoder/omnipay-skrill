@@ -63,6 +63,8 @@ class PreparePayoutResponse extends AbstractResponse
                 return 'An Invalid email parameter is supplied.';
             case 'CANNOT_LOGIN':
                 return 'Invalid combination of email and password is supplied.';
+            case 'PAYMENT_DENIED':
+                return 'Check in your account profile that the API is enabled.';
             default:
                 return 'Unknown error.';
         }

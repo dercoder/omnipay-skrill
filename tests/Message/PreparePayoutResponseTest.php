@@ -144,4 +144,20 @@ class PreparePayoutResponseTest extends TestCase
         $this->assertNull($response->getTransactionId());
         $this->assertNull($response->getTransactionReference());
     }
+
+    public function testFailed8()
+    {
+        $httpResponse = $this->getMockHttpResponse('PreparePayoutFailed8.txt');
+        $response = new PreparePayoutResponse($this->request, $httpResponse->xml());
+
+        $this->assertFalse($response->isSuccessful());
+        $this->assertFalse($response->isCancelled());
+        $this->assertFalse($response->isPending());
+        $this->assertFalse($response->isRedirect());
+        $this->assertSame('PAYMENT_DENIED', $response->getCode());
+        $this->assertSame('Check in your account profile that the API is enabled.', $response->getMessage());
+        $this->assertNull($response->getSessionId());
+        $this->assertNull($response->getTransactionId());
+        $this->assertNull($response->getTransactionReference());
+    }
 }
